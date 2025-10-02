@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Brigadista</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard">
+
+  <header class="dashboard-header">
+    <div class="logo">🌲</div>
+    <button id="logoutBtn" class="btn logout-btn">Cerrar sesión</button>
+  </header>
+
+  <main class="container">
+    <h1>👷 Bienvenido, Brigadista</h1>
+    <p>Aquí podrás registrar muestras, ver tus reportes y revisar el estado de tus envíos.</p>
+
+    <section class="cards-grid">
+      <div class="card">
+        <h3>Registrar muestra</h3>
+        <p>Sube nueva información de campo con evidencia fotográfica.</p>
+        <button class="btn card-btn" onclick="window.location.href='registrar_muestra.html'">Registrar</button>
+      </div>
+
+      <div class="card">
+        <h3>Mis reportes</h3>
+        <p>Consulta reportes enviados anteriormente.</p>
+        <button class="btn card-btn" onclick="window.location.href='mis_reportes.html'">Ver reportes</button>
+      </div>
+
+      <div class="card">
+        <h3>Estado de reportes</h3>
+        <p>Verifica si tus reportes han sido procesados o están pendientes.</p>
+        <button class="btn card-btn" onclick="window.location.href='estado_reportes.html'">Ver estado</button>
+      </div>
+
+      <div class="card">
+        <h3>Actualizar perfil</h3>
+        <p>Modifica tu información personal y de contacto.</p>
+        <button class="btn card-btn" onclick="window.location.href='actualizar_perfil.html'">Actualizar</button>
+      </div>
+
+      <div class="card">
+          <h3>📍 Zonas asignadas</h3>
+        <p>Revisa tus zonas de cobertura y reporta actividad.</p>
+        <button class="btn card-btn" onclick="window.location.href='zonas_asignadas.html'">Ver más</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="dashboard-footer">
+    <p>© 2025 IFN · Panel Brigadista</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

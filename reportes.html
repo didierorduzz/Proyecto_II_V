@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reportes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard">
+  <header class="dashboard-header">
+    <div class="logo">📑 IFN</div>
+    <button id="logoutBtn" class="btn logout-btn">Cerrar sesión</button>
+  </header>
+
+  <main class="container">
+    <h1>📑 Reportes de Campo</h1>
+    <p>Consulta y exporta reportes enviados por brigadistas.</p>
+
+    <div class="actions">
+      <button class="btn card-btn">⬇ Exportar CSV</button>
+      <button class="btn card-btn">⬇ Exportar PDF</button>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Brigadista</th>
+          <th>Fecha</th>
+          <th>Descripción</th>
+          <th>Estatus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>R-1001</td>
+          <td>Carlos Pérez</td>
+          <td>2025-09-12</td>
+          <td>Muestra tomada en parcela 12.</td>
+          <td>✔ Procesado</td>
+        </tr>
+        <tr>
+          <td>R-1002</td>
+          <td>María Gómez</td>
+          <td>2025-09-15</td>
+          <td>Reporte de árbol enfermo.</td>
+          <td>⚠ Pendiente</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer class="dashboard-footer">
+    <p>© 2025 IFN · Reportes</p>
+  </footer>
+
+  <script src="session.js"></script>
+</body>
+</html>

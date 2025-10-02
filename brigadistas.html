@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Brigadistas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard">
+
+  <!-- HEADER -->
+  <header class="dashboard-header">
+    <div class="logo">🌱</div>
+    <button id="logoutBtn" class="btn logout-btn">Cerrar sesión</button>
+  </header>
+
+  <!-- SECCIÓN -->
+  <main class="container">
+    <h1>👷 Gestión de Brigadistas</h1>
+    <p>Administra brigadistas registrados en el sistema.</p>
+
+    <div class="actions">
+      <button class="btn card-btn">➕ Agregar Brigadista</button>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>B-001</td>
+          <td>Carlos Pérez</td>
+          <td>carlos@udi.edu.co</td>
+          <td>Brigadista</td>
+          <td>
+            <button class="btn small">✏ Editar</button>
+            <button class="btn small danger">🗑 Eliminar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>B-002</td>
+          <td>María Gómez</td>
+          <td>maria@udi.edu.co</td>
+          <td>Brigadista</td>
+          <td>
+            <button class="btn small">✏ Editar</button>
+            <button class="btn small danger">🗑 Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer class="dashboard-footer">
+    <p>© 2025 IFN · Gestión de Brigadistas</p>
+  </footer>
+
+  <script src="session.js"></script>
+</body>
+</html>

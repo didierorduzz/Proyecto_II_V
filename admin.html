@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Administrador</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="dashboard">
+
+  <!-- HEADER -->
+  <header class="dashboard-header">
+    <div class="logo">🌱</div>
+    <button id="logoutBtn" class="btn logout-btn">Cerrar sesión</button>
+  </header>
+
+  <!-- BIENVENIDA -->
+  <section class="welcome-section">
+    <h1>⚙️ Bienvenido, Administrador</h1>
+    <p>Desde aquí podrás gestionar brigadistas, revisar reportes y administrar el sistema.</p>
+  </section>
+
+  <!-- GRID DE OPCIONES -->
+<main class="cards-grid">
+<div class="card">
+    <div class="card-header">
+    <i class="fa-solid fa-users icon"></i>
+    <h3>Gestión de brigadistas</h3>
+    </div>
+    <p>Añade, edita o elimina brigadistas registrados en el sistema.</p>
+    <button class="btn card-btn" onclick="window.location.href='brigadistas.html'">Gestionar</button>
+</div>
+
+<div class="card">
+    <div class="card-header">
+    <i class="fa-solid fa-file-alt icon"></i>
+    <h3>Reportes</h3>
+    </div>
+    <p>Visualiza reportes de campo enviados por los brigadistas.</p>
+    <button class="btn card-btn" onclick="window.location.href='reportes.html'">Ver reportes</button>
+</div>
+
+<div class="card">
+    <div class="card-header">
+    <i class="fa-solid fa-chart-line icon"></i>
+    <h3>Estadísticas</h3>
+    </div>
+    <p>Consulta métricas y gráficas de desempeño y emergencias.</p>
+    <button class="btn card-btn">Ver estadísticas</button>
+</div>
+
+<div class="card">
+    <div class="card-header">
+    <i class="fa-solid fa-cogs icon"></i>
+    <h3>Configuración</h3>
+    </div>
+    <p>Ajusta la configuración del sistema y permisos.</p>
+    <button class="btn card-btn">Configurar</button>
+</div>
+</main>
+
+  <!-- SECCIÓN EXTRA: RESUMEN -->
+  <section class="stats-section">
+    <h2>📊 Resumen general</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>24</h3>
+        <p>Brigadistas activos</p>
+      </div>
+      <div class="stat-card">
+        <h3>18</h3>
+        <p>Reportes procesados</p>
+      </div>
+      <div class="stat-card">
+        <h3>7</h3>
+        <p>Alertas críticas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dashboard-footer">
+    <p>© 2025 IFN · Panel Administrador</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Hace que la web sea responsive (se adapta a móviles y pantallas pequeñas) -->
+
+  <title>Inventario Forestal – IFN (Demo)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Importa el archivo CSS con los estilos de la página -->
+
+  <link rel="stylesheet" href="login.css" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Mejora la carga de fuentes conectando previamente con el servidor de Google Fonts -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Importa la fuente tipográfica Inter en varios grosores -->
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <!-- Enlace de accesibilidad para saltar directamente al contenido principal -->
+
+  <!-- ENCABEZADO (HEADER) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <!-- Área de marca -->
+        <span class="logo">IFN</span>
+        <span class="brand-text">Inventario Forestal</span>
+        <!-- Texto descriptivo -->
+      </div>
+
+    <div class="header-actions">
+      <!-- Botón para cambiar tema -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+        <span class="dot"></span><span class="label">Tema</span>
+      </button>
+
+      <!-- NUEVO BOTÓN DE LOGIN -->
+      <button id="loginBtn" class="btn login-btn" aria-label="Iniciar sesión">
+        Acceder
+      </button>
+
+      <button class="hamburger" aria-label="Abrir menú" aria-controls="navbar" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+      <nav id="navbar" class="nav">
+        <!-- Barra de navegación -->
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#gestion">Gestión</a></li>
+          <li><a href="#muestras">Muestras</a></li>
+          <li><a href="#reportes">Reportes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="contenido">
+    <!-- ---------- Sección HERO ---------- -->
+    <section id="inicio" class="hero">
+      <!-- Sección de presentación destacada -->
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <!-- Texto principal -->
+          <h1>Gestión Ágil del Inventario Forestal</h1>
+          <p>Registra conglomerados, subparcelas, árboles y muestras con evidencia fotográfica. Exporta reportes en minutos.</p>
+          <a href="#formulario" class="btn btn-primary">Pre-registrar una muestra</a>
+          <!-- Botón que dirige al formulario -->
+        </div>
+
+        <div class="hero-media reveal">
+          <!-- Imagen del hero -->
+          <img src="Ideam.png" alt="IDEAM logo" />
+        </div>
+      </div>
+
+      <div class="accent-anim"></div>
+      <!-- Elemento decorativo animado -->
+    </section>
+
+    <!-- ---------- Sección GESTIÓN ---------- -->
+    <section id="gestion" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Gestión de Conglomerados y Subparcelas</h2>
+        <p class="section-lead reveal">Estructura los puntos de muestreo y sus unidades internas para garantizar trazabilidad.</p>
+
+        <div class="cards">
+          <!-- Tarjetas informativas -->
+          <article class="card reveal">
+            <h3>Conglomerados</h3>
+            <p>Código único, ubicación (municipio / departamento), coordenadas y observaciones.</p>
+            <a href="#" class="link">Ver más</a>
+          </article>
+
+          <article class="card reveal">
+            <h3>Subparcelas</h3>
+            <p>Referencia local y asociación al conglomerado para una captura ordenada.</p>
+            <a href="#" class="link">Ver más</a>
+          </article>
+
+          <article class="card reveal">
+            <h3>Especies</h3>
+            <p>Catálogo taxonómico con nombre científico, común, familia y notas.</p>
+            <a href="#" class="link">Ver más</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- Sección MUESTRAS ---------- -->
+    <section id="muestras" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title reveal">Árboles y Muestras</h2>
+        <p class="section-lead reveal">Captura DAP, altura y asocia muestras con evidencia fotográfica.</p>
+
+        <div class="features">
+          <!-- Bloques con íconos -->
+          <div class="feature reveal">
+            <img src="Arboles.jpg" alt="Árbol" class="feature-img"/>
+            <div>
+              <h3>Árboles</h3>
+              <p>Registra DAP (cm), altura (m) y observaciones de campo.</p>
+            </div>
+          </div>
+
+          <div class="feature reveal">
+             <img src="Muestra.jpg" alt="Muestra" class="feature-img"/>
+            <div>
+              <h3>Muestras con imagen</h3>
+              <p>Código único, tipo (hoja, corteza, suelo) y al menos una imagen adjunta.</p>
+            </div>
+          </div>
+
+          <div class="feature reveal">
+            <img src="Usuario.png" alt="Usuario" class="feature-img"/>
+            <div>
+              <h3>Usuarios</h3>
+              <p>Registro por roles: Administrador / Brigada para control y trazabilidad.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- Sección REPORTES ---------- -->
+    <section id="reportes" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Reportes y Exportación</h2>
+        <p class="section-lead reveal">Genera listados por conglomerado, árbol o periodo y exporta en PDF/CSV.</p>
+
+        <div class="cards">
+          <article class="card reveal">
+            <h3>Listado por Conglomerado</h3>
+            <p>Árboles y muestras asociadas con filtros básicos.</p>
+            <a href="#" class="link">Ejemplo</a>
+          </article>
+
+          <article class="card reveal">
+            <h3>Descarga CSV</h3>
+            <p>Exporta para análisis rápido o integración con otras herramientas.</p>
+            <a href="#" class="link">Ejemplo</a>
+          </article>
+
+          <article class="card reveal">
+            <h3>Resumen PDF</h3>
+            <p>Formato limpio para compartir en informes de avance.</p>
+            <a href="#" class="link">Ejemplo</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- Sección FORMULARIO ---------- -->
+    <section id="formulario" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title reveal">Pre-registro de Muestra</h2>
+        <p class="section-lead reveal">Valida código, fecha y adjunta una imagen. Es una demo del flujo real.</p>
+
+        <form id="muestraForm" class="form" novalidate>
+          <!-- El atributo novalidate desactiva la validación automática del navegador -->
+
+          <!-- Campo código -->
+          <div class="form-row">
+            <label for="codigo">Código único (formato MS-0001)</label>
+            <input id="codigo" name="codigo" type="text" required pattern="^MS-\d{4}$" placeholder="MS-0001" title="Usa el formato MS-0001" />
+            <small class="error-msg" aria-live="polite"></small>
+          </div>
+
+          <!-- Campo código de árbol -->
+          <div class="form-row">
+            <label for="idArbol">Código de Árbol (formato AR-0001)</label>
+            <input id="idArbol" name="idArbol" type="text" required pattern="^AR-\d{4}$" placeholder="AR-0001" title="Usa el formato AR-0001" />
+            <small class="error-msg" aria-live="polite"></small>
+          </div>
+
+          <!-- Campo fecha -->
+          <div class="form-row">
+            <label for="fecha">Fecha de toma</label>
+            <input id="fecha" name="fecha" type="date" required />
+            <small class="error-msg" aria-live="polite"></small>
+          </div>
+
+          <!-- Campo tipo de muestra -->
+          <div class="form-row">
+            <label for="tipo">Tipo de muestra</label>
+            <select id="tipo" name="tipo" required>
+              <option value="">Selecciona…</option>
+              <option>Hoja</option>
+              <option>Corteza</option>
+              <option>Suelo</option>
+              <option>Semilla</option>
+            </select>
+            <small class="error-msg" aria-live="polite"></small>
+          </div>
+
+          <!-- Campo imagen -->
+          <div class="form-row">
+            <label for="imagen">Imagen (obligatoria)</label>
+            <input id="imagen" name="imagen" type="file" accept="image/*" required />
+            <small class="error-msg" aria-live="polite"></small>
+          </div>
+
+          <!-- Campo correo -->
+          <div class="form-row">
+            <label for="email">Correo de contacto</label>
+            <input id="email" name="email" type="email" required placeholder="tucorreo@udi.edu.co" />
+            <small class="error-msg" aria-live="polite"></small>
+          </div>
+
+          <!-- Checkbox confirmación -->
+          <div class="form-row checkbox">
+            <input id="acepto" name="acepto" type="checkbox" required />
+            <label for="acepto">Confirmo que la información es verídica.</label>
+          </div>
+
+          <!-- Botón de envío -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===========================
+       PIE DE PÁGINA (FOOTER)
+  ============================ -->
+  <footer id="contacto" class="site-footer">
+    <div class="container footer-grid">
+      <!-- Columna 1: contacto -->
+      <div>
+        <h3>Instituto de Hidrología, Meteorología y Estudios Ambientales</h3>
+        <h4>Sede principal</h4>
+        <ul class="clean">
+          <li>Dirección ventanilla única de radicación: Calle 25 D No. 96 B - 70 Bogotá D.C.</li>
+          <li>Código Postal: 110911</li>
+          <li>Horario de atención: Lunes a Viernes 8:00 am - 5:00 pm</li>
+        </ul>
+      </div>
+
+      <!-- Columna 2: redes sociales -->
+      <div>
+        <h4>Síguenos</h4>
+        <div class="socials">
+          <a href="#" aria-label="Facebook" class="social" title="Facebook"><span>f</span></a>
+          <a href="#" aria-label="Instagram" class="social" title="Instagram"><span>i</span></a>
+          <a href="#" aria-label="YouTube" class="social" title="YouTube"><span>▶</span></a>
+        </div>
+      </div>
+
+      <!-- Columna 3: créditos -->
+      <div>
+        <h4>Créditos</h4>
+        <p>Proyecto Integrador II – 5LA · 2025-II</p>
+        <p>Equipo: Didier Orduz, Cristian Aranguren</p>
+      </div>
+      <img src="logos_0.png" class="logo_gov">
+      <img src="logo-udi.png" class="logo_udi">
+    </div>
+
+    <div class="legal">© 2025 IFN · Todos los derechos reservados.</div>
+    <!-- Texto legal -->
+  </footer>
+
+  <!-- LOGIN MODAL -->
+  <div id="loginModal" class="modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" id="loginClose" aria-label="Cerrar">✕</button>
+      <div class="modal-body">
+        <h2>Iniciar sesión</h2>
+        <p class="muted">Accede con tu usuario de demostración.</p>
+        <form id="loginForm" class="login-form" autocomplete="off">
+          <label>
+            <span>Usuario</span>
+            <input type="text" id="loginUser" name="user" placeholder="demo" required>
+          </label>
+          <label>
+            <span>Contraseña</span>
+            <input type="password" id="loginPass" name="pass" placeholder="demo123" required>
+          </label>
+          <div class="login-actions">
+            <button type="submit" class="btn primary">Entrar</button>
+            <button type="button" class="btn ghost" id="loginCancel">Cancelar</button>
+          </div>
+          <div id="loginStatus" class="login-status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===========================
+       SCRIPTS
+  ============================ -->
+  <script src="script.js"></script>
+  <!-- Archivo JavaScript que maneja interacciones (menú, validaciones, tema) -->
+
+</body>
+</html>
