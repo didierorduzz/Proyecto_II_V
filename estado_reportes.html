@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Estado de Reportes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard">
+  <header class="dashboard-header">
+    <div class="logo">⏳</div>
+    <button id="logoutBtn" class="btn logout-btn">Cerrar sesión</button>
+  </header>
+
+  <main class="container">
+    <h1>📊 Estado de Reportes</h1>
+    <p>Consulta si tus reportes han sido procesados o están pendientes.</p>
+
+    <div id="estado-lista"></div>
+  </main>
+
+  <footer class="dashboard-footer">
+    <p>© 2025 IFN · Estado de Reportes</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const cont = document.getElementById("estado-lista");
+    const reportes = JSON.parse(localStorage.getItem("muestras")||"[]");
+
+    function renderEstados(){
+      cont.innerHTML="";
+      if(reportes.length===0){
+        cont.innerHTML="<p>No tienes reportes aún.</p>";
+        return;
+      }
+      reportes.forEach(m=>{
+        const div = document.createElement("div");
+        div.className="stat";
+        div.innerHTML=`<strong>${m.codigo}</strong> - ${m.tipo} <br> Estado: ${Math.random()>.5?"✔ Procesado":"⏳ Pendiente"}`;
+        cont.appendChild(div);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded",renderEstados);
+  </script>
+</body>
+</html>

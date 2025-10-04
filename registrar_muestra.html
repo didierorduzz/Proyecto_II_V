@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar Muestra</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard">
+  <header class="dashboard-header">
+    <div class="logo">🧪</div>
+    <button id="logoutBtn" class="btn logout-btn">Cerrar sesión</button>
+  </header>
+
+  <main class="container">
+    <h1>🧪 Registrar Muestra</h1>
+    <form class="form" id="formMuestra">
+      <label>Código
+        <input type="text" id="codigo" placeholder="MS-0001" required pattern="^MS-\\d{4}$">
+      </label>
+      <label>Código de Árbol
+        <input type="text" id="idArbol" placeholder="AR-0001" required pattern="^AR-\\d{4}$">
+      </label>
+      <label>Fecha
+        <input type="date" id="fecha" required>
+      </label>
+      <label>Tipo de muestra
+        <select id="tipo" required>
+          <option value="">Selecciona…</option>
+          <option>Hoja</option>
+          <option>Corteza</option>
+          <option>Suelo</option>
+          <option>Semilla</option>
+        </select>
+      </label>
+      <label>Imagen
+        <input type="file" id="imagen" accept="image/*" required>
+      </label>
+      <label>Correo de contacto
+        <input type="email" id="email" placeholder="tucorreo@udi.edu.co" required>
+      </label>
+      <button class="btn card-btn" type="submit">Guardar muestra</button>
+    </form>
+
+    <h2>📋 Muestras registradas</h2>
+    <table class="data-table" id="tablaMuestras">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Árbol</th>
+          <th>Fecha</th>
+          <th>Tipo</th>
+          <th>Correo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <footer class="dashboard-footer">
+    <p>© 2025 IFN · Registrar Muestra</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    let muestras = JSON.parse(localStorage.getItem("muestras")||"[]");
+
+    const form = document.getElementById("formMuestra");
+    const tabla = document.querySelector("#tablaMuestras tbody");
+
+    function renderMuestras(){
+      tabla.innerHTML = "";
+      muestras.forEach((m,idx)=>{
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${m.codigo}</td>
+          <td>${m.idArbol}</td>
+          <td>${m.fecha}</td>
+          <td>${m.tipo}</td>
+          <td>${m.email}</td>
+          <td>
+            <button class="btn small danger" onclick="eliminarMuestra(${idx})">🗑</button>
+          </td>`;
+        tabla.appendChild(tr);
+      });
+      localStorage.setItem("muestras", JSON.stringify(muestras));
+    }
+
+    form.addEventListener("submit", e=>{
+      e.preventDefault();
+      const muestra = {
+        codigo: document.getElementById("codigo").value,
+        idArbol: document.getElementById("idArbol").value,
+        fecha: document.getElementById("fecha").value,
+        tipo: document.getElementById("tipo").value,
+        email: document.getElementById("email").value
+      };
+      muestras.push(muestra);
+      form.reset();
+      renderMuestras();
+    });
+
+    function eliminarMuestra(i){
+      muestras.splice(i,1);
+      renderMuestras();
+    }
+
+    document.addEventListener("DOMContentLoaded", renderMuestras);
+  </script>
+</body>
+</html>

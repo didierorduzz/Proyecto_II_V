@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mis Reportes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard">
+  <header class="dashboard-header">
+    <div class="logo">📑</div>
+    <button id="logoutBtn" class="btn logout-btn">Cerrar sesión</button>
+  </header>
+
+  <main class="container">
+    <h1>📑 Mis Reportes</h1>
+    <p>Estos son los reportes de las muestras que has enviado.</p>
+
+    <table class="data-table" id="tablaReportes">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Árbol</th>
+          <th>Fecha</th>
+          <th>Tipo</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <footer class="dashboard-footer">
+    <p>© 2025 IFN · Mis Reportes</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const reportes = JSON.parse(localStorage.getItem("muestras")||"[]");
+    const tbody = document.querySelector("#tablaReportes tbody");
+
+    function render(){
+      tbody.innerHTML="";
+      reportes.forEach(m=>{
+        const tr = document.createElement("tr");
+        tr.innerHTML=`
+          <td>${m.codigo}</td>
+          <td>${m.idArbol}</td>
+          <td>${m.fecha}</td>
+          <td>${m.tipo}</td>
+          <td>${Math.random()>.5 ? "✔ Procesado":"⏳ Pendiente"}</td>`;
+        tbody.appendChild(tr);
+      });
+    }
+    document.addEventListener("DOMContentLoaded",render);
+  </script>
+</body>
+</html>

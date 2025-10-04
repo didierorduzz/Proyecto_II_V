@@ -441,3 +441,35 @@ body.dashboard {
   padding: 1rem;
   text-align: center;
 }
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: var(--surface);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.data-table th, .data-table td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.data-table th {
+  background: var(--surface-2);
+  text-align: left;
+}
+.data-table tr:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.form input, .form select, .form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}

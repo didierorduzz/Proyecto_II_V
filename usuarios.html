@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Usuarios</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard">
+
+  <header class="dashboard-header">
+    <div class="logo">👤</div>
+    <button id="logoutBtn" class="btn logout-btn">Cerrar sesión</button>
+  </header>
+
+  <main class="container">
+    <h1>👥 Gestión de Usuarios</h1>
+    <form class="form">
+      <label>Nombre
+        <input type="text" id="nombre" required>
+      </label>
+      <label>Correo
+        <input type="email" id="correo" required>
+      </label>
+      <label>Rol
+        <select id="rol" required>
+          <option value="brigadista">Brigadista</option>
+          <option value="admin">Administrador</option>
+        </select>
+      </label>
+      <button type="button" class="btn card-btn" onclick="crearUsuario()">Crear</button>
+    </form>
+
+    <h2>Usuarios registrados</h2>
+    <table class="data-table" id="tablaUsuarios">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Rol</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filas dinámicas JS -->
+      </tbody>
+    </table>
+  </main>
+
+  <footer class="dashboard-footer">
+    <p>© 2025 IFN · Gestión de Usuarios</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    let usuarios = [
+      {id: 1, nombre: "Carlos Pérez", correo: "carlos@udi.edu.co", rol: "brigadista", activo: true},
+      {id: 2, nombre: "Admin", correo: "admin@udi.edu.co", rol: "admin", activo: true}
+    ];
+
+    function renderUsuarios(){
+      const tbody = document.querySelector("#tablaUsuarios tbody");
+      tbody.innerHTML = "";
+      usuarios.forEach(u=>{
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${u.id}</td>
+          <td>${u.nombre}</td>
+          <td>${u.correo}</td>
+          <td>${u.rol}</td>
+          <td>${u.activo ? "Activo" : "Inactivo"}</td>
+          <td>
+            <button class="btn small" onclick="toggleEstado(${u.id})">${u.activo ? "Desactivar" : "Activar"}</button>
+            <button class="btn small danger" onclick="eliminarUsuario(${u.id})">Eliminar</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function crearUsuario(){
+      const nombre = document.getElementById("nombre").value;
+      const correo = document.getElementById("correo").value;
+      const rol = document.getElementById("rol").value;
+      if(!nombre || !correo) return alert("Completa todos los campos");
+
+      const id = usuarios.length ? usuarios[usuarios.length-1].id+1 : 1;
+      usuarios.push({id, nombre, correo, rol, activo:true});
+      renderUsuarios();
+      alert("Usuario creado ✅");
+    }
+
+    function toggleEstado(id){
+      const user = usuarios.find(u=>u.id===id);
+      user.activo = !user.activo;
+      renderUsuarios();
+    }
+
+    function eliminarUsuario(id){
+      usuarios = usuarios.filter(u=>u.id!==id);
+      renderUsuarios();
+    }
+
+    document.addEventListener("DOMContentLoaded", renderUsuarios);
+  </script>
+</body>
+</html>

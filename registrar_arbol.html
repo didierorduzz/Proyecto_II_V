@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar Árbol</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard">
+  <header class="dashboard-header">
+    <div class="logo">🌳</div>
+    <button id="logoutBtn" class="btn logout-btn">Cerrar sesión</button>
+  </header>
+
+  <main class="container">
+    <h1>🌳 Registrar Árbol</h1>
+    <form class="form" onsubmit="registrarArbol(event)">
+      <label>Código (AR-####)
+        <input type="text" id="codigoArbol" value="AR-0001" readonly>
+      </label>
+      <label>DAP (cm)
+        <input type="number" id="dap" required>
+      </label>
+      <label>Altura (m)
+        <input type="number" id="altura" required>
+      </label>
+      <label>Observaciones
+        <textarea id="obs"></textarea>
+      </label>
+      <button class="btn card-btn" type="submit">Guardar Árbol</button>
+    </form>
+  </main>
+
+  <footer class="dashboard-footer">
+    <p>© 2025 IFN · Registrar Árbol</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    let contador = 1;
+    function registrarArbol(e){
+      e.preventDefault();
+      const dap = document.getElementById("dap").value;
+      const altura = document.getElementById("altura").value;
+      if(dap <= 0 || altura <= 0) return alert("Valores inválidos");
+
+      contador++;
+      document.getElementById("codigoArbol").value = "AR-" + String(contador).padStart(4,"0");
+      alert("Árbol guardado ✅");
+    }
+  </script>
+</body>
+</html>
